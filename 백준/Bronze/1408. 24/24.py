@@ -1,0 +1,21 @@
+nt=str(input())
+st=str(input())
+nt1=nt.split(':')
+st1=st.split(':')
+n1=int(nt1[0])*3600
+n2=int(nt1[1])*60
+n3=int(nt1[2])
+n=n1+n2+n3
+if int(nt1[0])>int(st1[0]):
+    s1=(int(st1[0])+24)*3600
+else:    
+    s1=int(st1[0])*3600
+s2=int(st1[1])*60
+s3=int(st1[2])
+s=s1+s2+s3
+r=max([s,n])-min([s,n])
+r1=r//3600
+r2=(r%3600)//60
+r3=(r%3600)%60
+l=[f'{r1:02d}',f'{r2:02d}',f'{r3:02d}']
+print(str(":".join(l)))
